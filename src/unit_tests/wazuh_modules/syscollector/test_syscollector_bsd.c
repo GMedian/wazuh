@@ -16,10 +16,14 @@
 #include <setjmp.h>
 #include <cmocka.h>
 #include <time.h>
+#include <sys/proc_info.h>
 
 #include "shared.h"
+#include "headers/defs.h"
+#include "../../wrappers/common.h"
+#include "../../wrappers/macos/libc/stdio_wrappers.h"
 #include "../../../wazuh_modules/syscollector/syscollector.h"
-#include "../../../wazuh_modules/wmodules.h"
+#include "../../wazuh_modules/wmodules.h"
 
 
 static void test_normalize_mac_package_name(void **state) {
@@ -57,7 +61,6 @@ static void test_normalize_mac_package_name(void **state) {
     }
 #endif
 }
-
 
 int main(void) {
     const struct CMUnitTest tests[] = {
