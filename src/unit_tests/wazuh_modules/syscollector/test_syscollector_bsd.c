@@ -27,7 +27,6 @@
 
 
 static void test_normalize_mac_package_name(void **state) {
-#if defined(__FreeBSD__) || defined(__MACH__)
     int ret;
     int i;
     char * vendor = NULL;
@@ -59,7 +58,6 @@ static void test_normalize_mac_package_name(void **state) {
             assert_null(vendor);
         }
     }
-#endif
 }
 
 int main(void) {
